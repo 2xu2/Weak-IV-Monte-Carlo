@@ -25,7 +25,7 @@ stage1t = abs(stage1b(2, 1))/stage1SE; %first stage t statistic of pi1
 stage1F = ((stage1b(2,1))/stage1SE)^2; %first stage F statistic of pi1
 
 %second stage regression
-X = [ones(n, 1), x];
+X = [ones(n, 1), x, w];
 Xhat = [ones(n, 1), xhat];
 stage2b = inv(Xhat'* Xhat)*Xhat'*y; %stage2 beta
 yhat = X * stage2b;
